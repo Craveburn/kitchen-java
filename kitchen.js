@@ -43,11 +43,14 @@ class Oven {
 
 const microwave = new Microwave(true)
 const oven = new Oven(false, 'Burning')
+const kitchen = new Kitchen(microwave,oven)
+const kitchen2 = new Kitchen (new Microwave(false),new Oven(true))
 
 microwave.switchPower()
 microwave.quickCook()
 oven.switchPower()
 oven.slowCook()
 
-console.log('Does My Microwave Have Power?', microwave.hasPower, 'Is it cooking?', microwave.quickCook('exploding'))
-console.log('Does My Oven Have Power?', oven.hasPower, 'Is it Cooking?', oven.slowCook())
+console.log('Is the Microwave On?', kitchen.microwave.switchPower(),'Is the Oven On?', kitchen.oven.switchPower())
+console.log('The Microwave Is',kitchen.microwave.quickCook('Exploding'),'& The Oven Is', kitchen.oven.slowCook())
+console.log('Kitchen2', kitchen.microwave.switchPower(), kitchen.oven.switchPower())
