@@ -19,10 +19,8 @@ class Microwave {
         this.nuking = this.nuking
         return this.nuking
 }
-
     switchPower() {
         this.hasPower = !this.hasPower
-
         return this.hasPower
     }
 }
@@ -53,5 +51,5 @@ microwave.quickCook()
 oven.switchPower()
 oven.slowCook()
 
-console.log('Does My Microwave Have Power', microwave.hasPower, 'Is it cooking?', microwave.quickCook())
+console.log('Does My Microwave Have Power?', microwave.hasPower, 'Is it cooking?', microwave.quickCook())
 console.log('Does My Oven Have Power?', oven.hasPower, 'Is it Cooking?', oven.slowCook())
