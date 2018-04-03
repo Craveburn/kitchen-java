@@ -10,23 +10,35 @@ class Kitchen {
     }
 }
 
-class Microwave {
-    constructor(hasPower) {
+class Appliance {
+    constructor(hasPower){
         this.hasPower = hasPower
+    }
+    switchPower(){
+        this.hasPower = !this.hasPower
+        return this.hasPower 
+    }
+}
+
+class Microwave extends Appliance {
+    constructor(hasPower) {
+        super(hasPower)
+        // this.hasPower = hasPower
     }
     quickCook(setting) {
         this.nuking = setting
         return this.nuking
     }
-    switchPower() {
-        this.hasPower = !this.hasPower
-        return this.hasPower
-    }
+    // switchPower() {
+    //     this.hasPower = !this.hasPower
+    //     return this.hasPower
+    // }
 }
 
-class Oven {
+class Oven extends Appliance {
     constructor(hasPower, burning) {
-        this.hasPower = hasPower
+        super(hasPower)
+        // this.hasPower = hasPower
         this.burning = burning
     }
 
@@ -34,11 +46,11 @@ class Oven {
         return this.burning
     }
 
-    switchPower() {
-        this.hasPower = !this.hasPower
+    // switchPower() {
+    //     this.hasPower = !this.hasPower
 
-        return this.hasPower
-    }
+    //     return this.hasPower
+    // }
 }
 
 const microwave = new Microwave(true)
