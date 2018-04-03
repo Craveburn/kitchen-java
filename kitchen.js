@@ -11,12 +11,12 @@ class Kitchen {
 }
 
 class Appliance {
-    constructor(hasPower){
+    constructor(hasPower) {
         this.hasPower = hasPower
     }
-    switchPower(){
+    switchPower() {
         this.hasPower = !this.hasPower
-        return this.hasPower 
+        return this.hasPower
     }
 }
 
@@ -53,16 +53,4 @@ class Oven extends Appliance {
     // }
 }
 
-const microwave = new Microwave(true)
-const oven = new Oven(false, 'Burning')
-const kitchen = new Kitchen(microwave,oven)
-const kitchen2 = new Kitchen (new Microwave(false),new Oven(true))
-
-microwave.switchPower()
-microwave.quickCook()
-oven.switchPower()
-oven.slowCook()
-
-console.log('Is the Microwave On?', kitchen.microwave.switchPower(),'Is the Oven On?', kitchen.oven.switchPower())
-console.log('The Microwave Is',kitchen.microwave.quickCook('Exploding'),'& The Oven Is', kitchen.oven.slowCook())
-console.log('Kitchen2', kitchen.microwave.switchPower(), kitchen.oven.switchPower())
+export { Kitchen, Microwave, Oven}
